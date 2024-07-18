@@ -3,7 +3,10 @@ import Header from "./Header";
 import Cover from "../utils/Cover.webp";
 import { useState } from "react";
 import { checkValidData } from "../utils/validate";
-import { createUserWithEmailAndPassword } from "firebase/auth";
+import {
+  createUserWithEmailAndPassword,
+  signInWithEmailAndPassword,
+} from "firebase/auth";
 import { auth } from "../utils/firebase";
 
 const Login = () => {
@@ -21,7 +24,7 @@ const Login = () => {
     const message = checkValidData(
       email.current.value,
       password.current.value,
-      name.current.value
+      // name.current.value
     );
     setErrorMessage(message);
 
@@ -38,17 +41,33 @@ const Login = () => {
         .then((userCredential) => {
           // Signed up
           const user = userCredential.user;
-          console.log(user)
+          console.log(user);
           // ...
         })
         .catch((error) => {
           const errorCode = error.code;
           const errorMessage = error.message;
-          setErrorMessage(errorCode + ' - ' + errorMessage)
+          setErrorMessage(errorCode + " - " + errorMessage);
           // ..
         });
     } else {
       //sign in
+      signInWithEmailAndPassword(
+        auth,
+        email.current.value,
+        password.current.value
+      )
+        .then((userCredential) => {
+          // Signed in
+          const user = userCredential.user;
+          // ...
+          console.log(user)
+        })
+        .catch((error) => {
+          const errorCode = error.code;
+          const errorMessage = error.message;
+          setErrorMessage(errorCode+ ' '+ errorMessage)
+        });
     }
   };
   return (
