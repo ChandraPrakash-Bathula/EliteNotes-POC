@@ -6,14 +6,20 @@ import { checkValidData } from "../utils/validate";
 import {
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
+  updateProfile,
 } from "firebase/auth";
 import { auth } from "../utils/firebase";
+import { useNavigate } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { addUser } from "../utils/userSlice";
 
 const Login = () => {
   const [isSignInForm, setIsSignInForm] = useState(true);
+  const dispatch = useDispatch();
   const toggleSignInForm = () => {
     setIsSignInForm(!isSignInForm);
   };
+  const navigate = useNavigate();
 
   const [errorMessage, setErrorMessage] = useState(null);
   const email = useRef(null);
@@ -23,7 +29,7 @@ const Login = () => {
     //Validation
     const message = checkValidData(
       email.current.value,
-      password.current.value,
+      password.current.value
       // name.current.value
     );
     setErrorMessage(message);
@@ -41,7 +47,34 @@ const Login = () => {
         .then((userCredential) => {
           // Signed up
           const user = userCredential.user;
-          console.log(user);
+
+          updateProfile(user, {
+            displayName: name.current.value,
+            photoURL:
+              "https://media.licdn.com/dms/image/D4D0BAQEKvnbFXsF7cA/company-logo_100_100/0/1665577857098?e=1729123200&v=beta&t=iPjhkVZVbi2-rXQJAs44VsPd2dQGOpFzwvjZ6KjRc2M",
+          })
+            .then(() => {
+              // Profile updated!
+              // ...
+              const { uid, email, displayName, photoURL } = auth.currentUser;
+              dispatch(
+                addUser({
+                  uid: uid,
+                  email: email,
+                  displayName: displayName,
+                  photoURL: photoURL,
+                })
+              );
+              navigate("/browse");
+            })
+            .catch((error) => {
+              // An error occurred
+              // ...
+              setErrorMessage(error.message)
+            });
+
+          navigate("/browse");
+
           // ...
         })
         .catch((error) => {
@@ -61,12 +94,12 @@ const Login = () => {
           // Signed in
           const user = userCredential.user;
           // ...
-          console.log(user)
+          navigate("/browse");
         })
         .catch((error) => {
           const errorCode = error.code;
           const errorMessage = error.message;
-          setErrorMessage(errorCode+ ' '+ errorMessage)
+          setErrorMessage(errorCode + " " + errorMessage);
         });
     }
   };
