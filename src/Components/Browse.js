@@ -1,16 +1,24 @@
-import React from 'react';
-import Header from './Header';
-import Home from './Home';
-import Features from './Features';
+import React from "react";
+import Header from "./Header";
+import Home from "./Home";
+import Features from "./Features";
+import { useSelector } from "react-redux";
 
 const Browse = () => {
+  const showFeatureView = useSelector((store) => store.features.showFeatures);
+
   return (
     <div>
       <Header />
-      <Home />
-      <Features />
+      {showFeatureView ? (
+        <Features />
+      ) : (
+        <>
+          <Home />
+        </>
+      )}
     </div>
-  )
-}
+  );
+};
 
-export default Browse
+export default Browse;
