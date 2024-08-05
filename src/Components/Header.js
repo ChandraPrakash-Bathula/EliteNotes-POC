@@ -34,7 +34,7 @@ const Header = () => {
             className="py-2 px-4 bg-purple-500 text-white mx-4 my-2 rounded-md"
             onClick={handleFeatureSearch}
           >
-            GPT Search
+            Features
           </button>
           <img className="w-12 h-12" src={user?.photoURL} alt="userIcon" />
           <button

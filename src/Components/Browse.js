@@ -9,7 +9,7 @@ const Browse = () => {
 
   return (
     <div>
-      <Header />
+      <Header /> 
       {showFeatureView ? (
         <Features />
       ) : (

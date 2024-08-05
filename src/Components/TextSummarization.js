@@ -1,5 +1,6 @@
 import { useRef, useState } from "react";
 import openai from "../utils/openai"; // Adjust the path as needed
+import Header from "./Header";
 
 const TextSummarization = () => {
   const inputText = useRef(null);
@@ -14,7 +15,7 @@ const TextSummarization = () => {
 
     try {
       const gptSummaryResults = await openai.chat.completions.create({
-        messages: [{ role: "user", content: gptQuery }],
+        messages: [{ role: "user", content: gptQuery + "Don't give any summary if the input is empty. Just say there is no text to summarize."}],
         model: "gpt-3.5-turbo",
       });
 
@@ -36,40 +37,45 @@ const TextSummarization = () => {
 
   return (
     <>
-      <div className="pt-10 flex justify-center">
-        <form
-          className="bg-black w-full md:w-1/2 grid grid-cols-12"
-          onSubmit={(e) => e.preventDefault()}
-        >
-          <textarea
-            ref={inputText}
-            rows="10"
-            className="p-4 m-4 col-span-12"
-            placeholder="Enter text to summarize"
-          ></textarea>
-          <button
-            className="py-2 px-4 rounded-lg bg-red-600 text-white col-span-12 m-4"
-            onClick={handleSummarizeClick}
-            disabled={loading}
-          >
-            {loading ? "Summarizing..." : "Summarize"}
-          </button>
-        </form>
-      </div>
-      <div className="pt-4 flex justify-center">
-        <div className="bg-white w-full md:w-1/2 p-4 rounded-lg shadow-lg">
-          <h3 className="text-xl font-bold mb-2">Summary</h3>
-          <p>{summary}</p>
-          {summary && (
-            <button
-              className="py-2 px-4 rounded-lg bg-blue-600 text-white mt-4"
-              onClick={handleCopy}
-            >
-              Copy
-            </button>
-          )}
-        </div>
-      </div>
+    <Header />
+    <div className="flex flex-col items-center justify-center md:flex-grow pt-10">
+  <form
+    className="w-full max-w-md bg-white rounded-lg shadow-md p-4 mb-4"
+    onSubmit={(e) => e.preventDefault()}
+  >
+    <div className="w-full max-w-xs bg-white border border-gray-300 p-4 mb-4">
+      <textarea
+        ref={inputText}
+        rows="10"
+        className="w-full h-64 p-2 border border-gray-400 rounded-md outline-none resize-none"
+        placeholder="Enter text to summarize"
+      ></textarea>
+    </div>
+    <button
+      className={`w-full px-4 py-2 rounded-md text-white mb-4 ${
+        loading ? "bg-gray-500" : "bg-red-500"
+      }`}
+      onClick={handleSummarizeClick}
+      disabled={loading}
+    >
+      {loading ? "Summarizing..." : "Summarize"}
+    </button>
+  </form>
+  <div className="w-full max-w-md bg-white rounded-lg shadow-md p-4 mb-4">
+    <h3 className="text-gray-700 font-medium mb-2">Summary</h3>
+    <div className="bg-gray-100 p-2 rounded-md max-h-72 overflow-y-auto">
+      <p>{summary}</p>
+    </div>
+    {summary && (
+      <button
+        className="w-full px-4 py-2 rounded-md bg-blue-600 text-white mt-4"
+        onClick={handleCopy}
+      >
+        Copy
+      </button>
+    )}
+  </div>
+</div>
     </>
   );
 };

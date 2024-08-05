@@ -1,5 +1,6 @@
 import { useRef, useState } from "react";
 import openai from "../utils/openai"; // Adjust the path as needed
+// import Header from "./Header";
 
 const InformationRetrieval = () => {
   const inputQuery = useRef(null);
@@ -58,6 +59,7 @@ const InformationRetrieval = () => {
 
   return (
     <>
+    {/* <Header /> */}
       <div className="pt-10 flex justify-center">
         <form
           className="bg-black w-full md:w-1/2 grid grid-cols-12"
