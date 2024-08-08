@@ -3,3 +3,4 @@ build
 .firebase
 leopard_params.pv
 /pdfjs
+.env

@@ -429,16 +429,16 @@ const Home = () => {
       </header> */}
 
       {/* Video Section */}
-      <div className="w-full max-w-6xl mt-8 px-2 py-4 border-2 border-gray-800">
+      <div className="w-full h-[535px] max-w-6xl mt-8 px-2 py-4 border-2 border-gray-800">
         <div
           className="relative"
           style={{ paddingBottom: "56.25%", height: 0 }}
         >
           <iframe
-            className="absolute top-0 left-0 w-full h-full"
-            width="560"
-            height="315"
-            src="https://www.youtube.com/embed/eAHat-QDizc?si=hjAl44ehaAed_Oe0"
+            className="absolute top-0 left-0 w-full h-[500px]"
+            width="450"
+            height="275"
+            src="https://www.youtube.com/embed/UwsrzCVZAb8?si=AohAHjuKVsobWStS" 
             title="YouTube video player"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
           ></iframe>
