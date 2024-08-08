@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import {AssemblyAI} from 'assemblyai';
 import {ASSEMBLY_AI_KEY} from '../utils/constants';
-import Header from './Header';
 
 const AssemblyAI_KEY = ASSEMBLY_AI_KEY; // Replace with your AssemblyAI API key
 
@@ -101,17 +100,18 @@ const Transcription = () => {
 
   return (
     <>
-    <Header />
-    <div className="pt-10 flex justify-center">
+    <div className='bg-black rounded-md p-6' >
+    <div className="pt-4 flex justify-center">
       <div className="bg-black w-full md:w-1/2 grid grid-cols-12 p-4 rounded-lg">
         <div className="col-span-12 flex justify-center mb-4">
           <input type="file" accept="video/*" onChange={handleFileUpload} disabled={loading} />
         </div>
-        <div className="col-span-12 bg-white p-4 rounded-lg shadow-lg">
+        <div className="col-span-12 bg-white p-4 rounded-lg shadow-lg  max-h-32 overflow-y-auto">
           <h3 className="text-xl font-bold mb-2">Video Transcription</h3>
           {loading ? <p>Transcribing...</p> : <p>{transcription}</p>}
         </div>
       </div>
+    </div>
     </div>
     </>
   );
