@@ -1,12 +1,22 @@
 import { useRef, useState } from "react";
 import openai from "../utils/openai"; // Adjust the path as needed
-import Header from "./Header";
 
 const Translation = () => {
   const inputText = useRef(null);
   const [translatedText, setTranslatedText] = useState("");
   const [loading, setLoading] = useState(false);
   const [targetLanguage, setTargetLanguage] = useState("telugu");
+
+  const [copyButtonText, setCopyButtonText] = useState("Copy");
+  const handleCopy = () => {
+    navigator.clipboard.writeText(translatedText);
+    setCopyButtonText("Copied!");
+    setTimeout(() => {
+      setCopyButtonText("Copy");
+    }, 2000);
+  };
+
+
 
   const handleTranslateClick = async () => {
     setLoading(true);
@@ -40,9 +50,9 @@ const Translation = () => {
     setLoading(false);
   };
 
-  const handleCopy = () => {
-    navigator.clipboard.writeText(translatedText);
-  };
+  // const handleCopy = () => {
+  //   navigator.clipboard.writeText(translatedText);
+  // };
 
   const detectLanguage = (text) => {
     // Simple language detection logic (you can enhance this with a more robust solution)
@@ -55,10 +65,10 @@ const Translation = () => {
 
   return (
     <>
-    <Header />
-      <div className="pt-10 flex justify-center">
+    <div className="bg-gray-100 rounded-md p-6" >
+      <div className="pt-4 flex justify-center">
         <form
-          className="bg-black w-full md:w-1/2 grid grid-cols-12"
+          className="bg-black w-full md:w-1/2 grid grid-cols-12 rounded-md"
           onSubmit={(e) => e.preventDefault()}
         >
           <textarea
@@ -87,18 +97,21 @@ const Translation = () => {
         </form>
       </div>
       <div className="pt-4 flex justify-center">
-        <div className="bg-white w-full md:w-1/2 p-4 rounded-lg shadow-lg">
+        <div className="bg-white w-full md:w-1/2 p-4 rounded-lg shadow-lg  max-h-32 overflow-y-auto">
           <h3 className="text-xl font-bold mb-2">Translation</h3>
           <p>{translatedText}</p>
           {translatedText && (
             <button
-              className="py-2 px-4 rounded-lg bg-blue-600 text-white mt-4"
-              onClick={handleCopy}
-            >
-              Copy
-            </button>
+            className={`py-2 px-4 rounded-lg mt-4 text-white ${
+              copyButtonText === "Copied!" ? "bg-green-600" : "bg-blue-600"
+            }`}
+            onClick={handleCopy}
+          >
+            {copyButtonText}
+          </button>
           )}
         </div>
+      </div>
       </div>
     </>
   );

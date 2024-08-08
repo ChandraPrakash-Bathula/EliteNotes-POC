@@ -1,6 +1,6 @@
 import React, { useRef } from "react";
 import Header from "./Header";
-import Cover from "../utils/Cover.webp";
+import Cover from "../utils/Cover.jpg";
 import { useState } from "react";
 import { checkValidData } from "../utils/validate";
 import {
@@ -107,7 +107,7 @@ const Login = () => {
     <div>
       <Header />
       <div className="absolute">
-        <img src={Cover} alt="background-image" className="w-screen h-1/2" />
+        <img src={Cover} alt="background-image" className="w-auto h-1/3" />
       </div>
       <form
         onSubmit={(e) => e.preventDefault()}
