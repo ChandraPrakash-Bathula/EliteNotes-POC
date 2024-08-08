@@ -30,7 +30,7 @@ const Header = () => {
       {/* <img src={image} alt="logo" className="w-44"  onClick={handleFeatureSearch} /> */}
       <header className="py-4 bg-gray-800 text-white flex items-center px-4">
   <img className="w-12 h-12 rounded-sm mr-4" src={user?.photoURL ? user.photoURL : 'https://media.licdn.com/dms/image/D4D0BAQEKvnbFXsF7cA/company-logo_100_100/0/1665577857098?e=1729123200&v=beta&t=iPjhkVZVbi2-rXQJAs44VsPd2dQGOpFzwvjZ6KjRc2M'} alt="userIcon" />
-  <h1 className="text-3xl font-bold">Elite Notes</h1>
+  <h1 className="text-3xl ">Elite Notes</h1>
 </header>
 
       {user && (
