@@ -211,6 +211,7 @@ import Twitter from "../utils/twitter.png";
 import Address from "../utils/address.svg";
 import Phone from "../utils/phone.svg";
 import Email from "../utils/mail.svg";
+import { isUploadable } from "openai/uploads";
 
 export default function VoiceWidget() {
   const {
@@ -329,7 +330,7 @@ export default function VoiceWidget() {
 
   return (
     <>
-      <div className="min-h-screen bg-gray-100 flex flex-col md:flex-row items-center justify-center pt-12">
+      <div className="min-h-screen bg-gray-100 flex flex-col md:flex-row items-center justify-center">
         <div className="flex flex-col md:absolute md:right-0 md:top-1/2 md:transform md:-translate-y-1/2 space-y-5 p-4 pt-8">
           <button
             onClick={() => setIsTextSummaryOpen(true)}
@@ -362,7 +363,7 @@ export default function VoiceWidget() {
             File Summary
           </button>
         </div>
-        <div className="flex flex-col items-center justify-center md:flex-grow">
+        <div className="flex flex-col items-center pt-16 justify-center md:flex-grow">
           {error && <p className="text-red-500 mb-4">{error.toString()}</p>}
           <button
             onClick={toggleInitEngine}
@@ -408,7 +409,7 @@ export default function VoiceWidget() {
               {isRecording ? "Stop Video Meeting" : "Start Video Meeting"}
             </button>
           </div>
-          {isInitialized &&  (
+          {isInitialized && (
             <div className="w-full max-w-md bg-black rounded-lg shadow-md p-4 mb-4">
               <video
                 ref={videoRef}
@@ -421,7 +422,7 @@ export default function VoiceWidget() {
           )}
           <div className="w-full max-w-md bg-white rounded-lg shadow-md p-4 mb-4">
             <h3 className="text-gray-700 font-medium mb-2">Transcript:</h3>
-            <p className="bg-gray-100 p-2 rounded-md overflow-y-auto h-24">{result?.transcript}</p>
+            <p className="bg-gray-100 p-2 rounded-md overflow-y-auto max-h-28">{result?.transcript}</p>
           </div>
         </div>
       </div>
