@@ -330,7 +330,7 @@ export default function VoiceWidget() {
 
   return (
     <>
-      <div className="min-h-screen bg-gray-100 flex flex-col md:flex-row items-center justify-center">
+      {/* <div className="min-h-screen bg-gray-100 flex flex-col md:flex-row items-center justify-center">
         <div className="flex flex-col md:absolute md:right-0 md:top-1/2 md:transform md:-translate-y-1/2 space-y-5 p-4 pt-8">
           <button
             onClick={() => setIsTextSummaryOpen(true)}
@@ -425,7 +425,101 @@ export default function VoiceWidget() {
             <p className="bg-gray-100 p-2 rounded-md overflow-y-auto max-h-28">{result?.transcript}</p>
           </div>
         </div>
-      </div>
+      </div> */}
+
+
+<div className="min-h-screen bg-gray-100 flex flex-col md:flex-row items-center justify-start pl-4">
+  {/* Main Content */}
+  <div className="flex flex-col md:flex-row md:space-x-4 w-full max-w-5xl p-4">
+    {/* Transcript Section */}
+    <div className="flex flex-col w-5/12 md:w-1/3 bg-white rounded-lg shadow-md p-4 mb-4">
+    <button
+        onClick={toggleInitEngine}
+        className={`bg-blue-500 text-white px-4 py-2 rounded-md mb-4 focus:outline-none focus:ring-2 focus:ring-blue-500 ${
+          isInitialized ? "bg-red-500" : "bg-blue-500"
+        }`}
+      >
+        {isInitialized ? "Deinitialize Transcription" : "Initialize Transcription"}
+      </button>
+      <label
+        htmlFor="audio-file"
+        className="block text-gray-700 font-medium mb-2"
+      >
+        Choose audio file to transcribe:
+      </label>
+      <input
+        id="audio-file"
+        type="file"
+        accept="audio/*"
+        disabled={!isLoaded}
+        onChange={async (e) => {
+          if (!!e.target.files?.length) {
+            await processFile(e.target.files[0]);
+          }
+        }}
+        className="w-full mb-4 p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+      />
+      <h3 className="text-gray-700 font-medium mb-2">Transcript:</h3>
+      <p className="bg-gray-100 p-2 rounded-md overflow-y-auto max-h-80 mb-4">
+        {result?.transcript}
+      </p>
+     
+    </div>
+
+
+    {/* Video Meeting Section */}    
+    <div className="flex flex-col w-full md:w-2/3 bg-black rounded-lg shadow-md p-4 mb-4">
+    <label
+        htmlFor="audio-record"
+        className="block text-gray-700 font-medium mb-2"
+      >
+        Record audio to transcribe
+      </label>
+    <button
+        id="audio-record"
+        disabled={!isLoaded}
+        onClick={toggleVideoMeeting}
+        className={`w-full px-4 py-2 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 ${
+          isRecording ? "bg-red-500" : "bg-green-500"
+        } text-white`}
+      >
+        {isRecording ? "Stop Video Meeting" : "Start Video Meeting"}
+      </button>
+      {isInitialized && (
+        <video
+          ref={videoRef}
+          className="w-full mb-4"
+          autoPlay
+          playsInline
+          muted
+        />
+      )}
+
+      {error && <p className="text-red-500 mb-4">{error.toString()}</p>}
+    </div>
+  </div>
+
+  {/* Side Buttons */}
+  <div className="flex flex-col md:absolute md:right-0 md:top-1/2 md:transform md:-translate-y-1/2 space-y-5 p-4 pt-8">
+    <span className="text-xl text-green-500">Try our Capabilities!!</span>
+    {[
+      { label: "Text Summary", onClick: () => setIsTextSummaryOpen(true) },
+      { label: "Info Retrieval", onClick: () => setIsInfoRetrievalOpen(true) },
+      { label: "Language Translation", onClick: () => setIsTranslationOpen(true) },
+      { label: "Keywords", onClick: () => setIsKeywordsOpen(true) },
+      { label: "File Summary", onClick: () => setIsFileSummaryOpen(true) },
+    ].map((button, index) => (
+      <button
+        key={index}
+        onClick={button.onClick}
+        className="border border-gray-300 rounded-md px-4 py-2 text-gray-700 hover:bg-gray-200 focus:outline-none mr-12 focus:ring-2 focus:ring-blue-500"
+      >
+        {button.label}
+      </button>
+    ))}
+  </div>
+</div>
+
 
       {/* <div className="pt-10 flex justify-center">
         <form
