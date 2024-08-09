@@ -137,7 +137,7 @@ const Login = () => {
           className="p-4 my-4 w-full bg-gray-700 rounded-md"
         />
         <p className="text-red-500 text-lg font-bold p-2">{errorMessage}</p>
-        <p className="text-white text-sm font-semibold p-1">Password must be (8) characters in length, contain (1) uppercase, (1) lowercase and 1 numeric.</p>
+        <p className="text-white text-xs font-semibold p-1">Password must be (8) characters in length, contain (1) uppercase, (1) lowercase and 1 numeric.</p>
         <button
           className="p-4 my-6 bg-red-600 w-full rounded-md"
           onClick={handleButtonClick}
