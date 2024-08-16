@@ -433,12 +433,12 @@ const Home = () => {
         <div
           className="relative pb-[56.25%]"
         >
-          <iframe
-            className="absolute top-0 left-0 w-full h-full"
-            width="560"
-            height="315"
+         <iframe
+            className="absolute top-0 left-0 w-full h-[500px]"
+            width="450"
+            height="275"
            src="https://www.youtube.com/embed/reUZRyXxUs4?si=A9TpzBKJ3GqmUigA"
-            title="YouTube video player"
+           title="YouTube video player"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
           ></iframe>
         </div>
