@@ -429,7 +429,7 @@ const Home = () => {
       </header> */}
 
       {/* Video Section */}
-      <div className="w-full max-w-6xl mt-8 px-2 py-4 border-2 border-gray-800">
+      <div className="w-10/12 h-[535px] max-w-6xl mt-8 px-2 py-4">
         <div
           className="relative pb-[56.25%]"
         >
@@ -437,7 +437,7 @@ const Home = () => {
             className="absolute top-0 left-0 w-full h-full"
             width="560"
             height="315"
-            src="https://www.youtube.com/embed/eAHat-QDizc?si=hjAl44ehaAed_Oe0"
+           src="https://www.youtube.com/embed/reUZRyXxUs4?si=A9TpzBKJ3GqmUigA"
             title="YouTube video player"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
           ></iframe>

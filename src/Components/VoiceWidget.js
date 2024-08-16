@@ -428,8 +428,10 @@ export default function VoiceWidget() {
       </div> */}
 
 
-<div className="min-h-screen bg-gray-100 flex flex-col md:flex-row items-center justify-center pt-12">
-<div className="flex flex-col md:absolute md:right-0 md:top-1/2 md:transform md:-translate-y-1/2 space-y-5 p-4 pt-8">
+<div className="min-h-screen bg-gray-100 flex flex-col md:flex-row items-center justify-start pl-4">
+  {/* Main Content */}
+  <div className="flex flex-col md:flex-row md:space-x-4 w-full max-w-5xl p-4">
+    {/* Transcript Section */}
     <div className="flex flex-col w-5/12 md:w-1/3 bg-white rounded-lg shadow-md p-4 mb-4">
     <button
         onClick={toggleInitEngine}
