@@ -104,7 +104,7 @@ const Login = () => {
     }
   };
   return (
-    <>
+<>
       <Header />
       <div className="absolute">
         <img src={Cover} alt="background-image" className="h-[154lvh] md:h-screen lg:h-screen object-cover w-screen" />
@@ -146,11 +146,12 @@ const Login = () => {
         </button>
         <p className="py-6 cursor-pointer" onClick={toggleSignInForm}>
           {isSignInForm
-           ? "New User ? Sign Up Now"
-           : "Already an User ? Sign In Now."}
+            ? "New User ? Sign Up Now"
+            : "Already an User ? Sign In Now."}
         </p>
       </form>
-    </>
+
+      </>
   );
 };
 
