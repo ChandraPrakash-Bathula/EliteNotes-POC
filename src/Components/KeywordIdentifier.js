@@ -66,7 +66,7 @@ const KeywordIdentifier = () => {
         </form>
       </div>
       <div className="pt-4 flex justify-center">
-        <div className="bg-white w-full md:w-1/2 p-4 rounded-lg shadow-lg max-h-32 overflow-y-auto">
+      <div className="bg-white w-full md:w-1/2 p-4 rounded-lg shadow-lg max-h-32 overflow-y-auto">
           <h3 className="text-xl font-bold mb-2">Keywords</h3>
           <p>{keywords}</p>
           {keywords && (

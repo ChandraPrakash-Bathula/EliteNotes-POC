@@ -104,16 +104,16 @@ const Login = () => {
     }
   };
   return (
-    <div>
+    <>
       <Header />
       <div className="absolute">
-        <img src={Cover} alt="background-image" className="w-auto h-1/3" />
+        <img src={Cover} alt="background-image" className="h-[154lvh] md:h-screen lg:h-screen object-cover w-screen" />
       </div>
       <form
         onSubmit={(e) => e.preventDefault()}
-        className="absolute my-36 mx-auto p-12 text-white bg-black rounded-lg w-3/12 right-0 left-0 bg-opacity-80"
+        className="absolute md:my-36 lg:my-36 my-36 mx-auto p-12 text-white bg-black rounded-lg md:w-6/12 lg:w-3/12 w-10/12 right-0 left-0 bg-opacity-80"
       >
-        <h1 className="font-bold text-3xl py-4">
+        <h1 className="font-bold text-2xl py-4">
           {isSignInForm ? "Sign In" : "Sign Up"}
         </h1>
         {!isSignInForm && (
@@ -137,7 +137,7 @@ const Login = () => {
           className="p-4 my-4 w-full bg-gray-700 rounded-md"
         />
         <p className="text-red-500 text-lg font-bold p-2">{errorMessage}</p>
-        <p className="text-white text-xs font-semibold p-1">Password must be (8) characters in length, contain (1) uppercase, (1) lowercase and 1 numeric.</p>
+        <p className="text-white md:text-sm lg:text-sm text-xs font-semibold p-1">Password must be (8) characters in length, contain (1) uppercase, (1) lowercase and 1 numeric.</p>
         <button
           className="p-4 my-6 bg-red-600 w-full rounded-md"
           onClick={handleButtonClick}
@@ -146,11 +146,11 @@ const Login = () => {
         </button>
         <p className="py-6 cursor-pointer" onClick={toggleSignInForm}>
           {isSignInForm
-            ? "New to EliteNotes? Sign Up Now"
-            : "Already registered? Sign In Now."}
+           ? "New User ? Sign Up Now"
+           : "Already an User ? Sign In Now."}
         </p>
       </form>
-    </div>
+    </>
   );
 };
 
