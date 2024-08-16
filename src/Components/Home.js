@@ -395,7 +395,7 @@ const Home = () => {
   const openDialog = (feature) => {
     setDialogContent(
       <div>
-        <h2 className="text-2xl font-bold mb-4 flex justify-center">
+        <h2 className="text-lg lg:text-xl md:text-xl font-bold mb-4 flex justify-center">
           {feature.title}
         </h2>
         <p className="mb-4 whitespace-pre-line">{feature.details}</p>
@@ -422,23 +422,22 @@ const Home = () => {
   };
 
   return (
-    <div className="flex flex-col items-center pt-20">
+    <div className="flex flex-col items-center pt-28 mx-2">
       {/* Header */}
       {/* <header className="w-full py-4 bg-gray-800 text-white text-center">
         <h1 className="text-3xl font-bold">Elite Notes</h1>
       </header> */}
 
       {/* Video Section */}
-      <div className="w-10/12 h-[535px] max-w-6xl mt-8 px-2 py-4">
+      <div className="w-full max-w-6xl mt-8 px-2 py-4 border-2 border-gray-800">
         <div
-          className="relative"
-          style={{ paddingBottom: "56.25%", height: 0 }}
+          className="relative pb-[56.25%]"
         >
           <iframe
-            className="absolute top-0 left-0 w-full h-[500px]"
-            width="450"
-            height="275"
-            src="https://www.youtube.com/embed/reUZRyXxUs4?si=A9TpzBKJ3GqmUigA" 
+            className="absolute top-0 left-0 w-full h-full"
+            width="560"
+            height="315"
+            src="https://www.youtube.com/embed/eAHat-QDizc?si=hjAl44ehaAed_Oe0"
             title="YouTube video player"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
           ></iframe>
@@ -460,15 +459,15 @@ const Home = () => {
           needing a reliable assistant, Elite Notes is here to support you
           every step of the way.
         </p> */}
-        <h2 className="mb-4 text-2xl font-bold">About Elite Notes</h2>
-        <p className="mb-4 text-lg">
+        <h2 className="mb-4 text-xl lg:text-2xl md:text-2xl font-bold">About Elite Notes</h2>
+        <p className="mb-4 text-sm lg:text-lg md:text-lg text-justify">
           Elite Notes is a cutting-edge virtual assistant platform designed to
           break down complex tasks, eliminate repetitive processes, and
           significantly reduce the time spent on manual activities. Our platform
           helps you streamline your workflow, enhance productivity, and focus on
           what truly matters.
         </p>
-        <p className="mb-4 text-lg">
+        <p className="mb-4 text-sm lg:text-lg md:text-lg text-justify">
           With Elite Notes, you can efficiently manage your tasks, summarize
           lengthy documents, transcribe live meetings, translate languages in
           real-time, and retrieve crucial information specific to your domain.
@@ -477,9 +476,8 @@ const Home = () => {
           tasks and boosting your efficiency.
         </p>
       </section>
-
       {/* Features Section */}
-      <section className="w-full max-w-6xl py-8 px-4">
+      <section className="w-full max-w-6xl pt-2 pb-8 px-4">
         <h2 className="mb-4 text-2xl font-bold text-center">Our Features</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {features.map((feature, index) => (
@@ -628,7 +626,7 @@ const Home = () => {
 const FeatureCard = ({ feature, openDialog }) => (
   <div className="bg-white rounded-lg shadow-md p-6 text-center">
     <h3 className="text-xl font-bold mb-2">{feature.title}</h3>
-    <p className="mb-4">{feature.description}</p>
+    <p className="mb-4 text-sm lg:text-lg md:text-lg text-balance">{feature.description}</p>
     <button
       onClick={() => openDialog(feature)}
       className="text-blue-500 hover:underline"
