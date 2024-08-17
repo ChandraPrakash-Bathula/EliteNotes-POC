@@ -422,7 +422,8 @@ const Home = () => {
   };
 
   return (
-    <div className="flex flex-col items-center pt-28 mx-2">
+    <>
+    <div className="flex flex-col items-center pt-28 w-screen bg-rose-300">
       {/* Header */}
       {/* <header className="w-full py-4 bg-gray-800 text-white text-center">
         <h1 className="text-3xl font-bold">Elite Notes</h1>
@@ -491,7 +492,7 @@ const Home = () => {
       </section>
 
       {/* Footer */}
-      <footer className="w-full bg-gray-800 text-white py-12 mt-8">
+      <footer className="w-screen bg-gray-800 text-white py-12 mt-8">
         <div className="max-w-6xl mx-auto text-center">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div>
@@ -525,7 +526,7 @@ const Home = () => {
             </div>
             <div>
               <h3 className="text-xl font-bold mb-4">Follow Us</h3>
-              <ul className="space-y-2 pl-32">
+              <ul className="space-y-2 md:pl-32 lg:pl-32 pl-60">
                 <li>
                   <a
                     href="https://www.linkedin.com/company/elitenotes/"
@@ -620,6 +621,7 @@ const Home = () => {
         </Dialog>
       )}
     </div>
+    </>
   );
 };
 

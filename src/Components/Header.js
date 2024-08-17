@@ -60,7 +60,7 @@ const Header = () => {
           }
           alt="userIcon"
         />
-        <h1 className="lg:text-3xl md:text-2xl text-md font-semibold">Elite Notes</h1>
+        <h1 className="lg:text-2xl md:text-2xl text-md font-serif">EliteNotes</h1>
       </header>
       <div>
         {/* Button to open the feedback dialog */}
@@ -118,12 +118,12 @@ const Header = () => {
         )}
       </div>
       {user && (
-        <div className="flex p-2">
+        <div className="flex p-2 md:text-sm lg:text-sm text-xs font-serif">
           <button
             onClick={() => setFeedbackOpen(true)}
-            className="py-2 px-4 bg-sky-600 text-white mx-4 my-2 rounded-md"
+            className="md:py-2 py-1 lg:py-2 px-4 bg-sky-600 text-white lg:mx-4 md:mx-4 mx-2 my-2 rounded-md"
           >
-            Submit Feedback!
+            Feedback!
           </button>
           <button
             className="py-2 px-4 bg-purple-500 text-white mx-4 my-2 rounded-md"
@@ -134,9 +134,9 @@ const Header = () => {
           {/* <img className="w-12 h-12" src={user?.photoURL} alt="userIcon" /> */}
           <button
             onClick={handleSignOut}
-            className="bg-red-500 text-white font-bold p-1 m-1 h-12 w-24 mt-2 rounded-md"
+            className="bg-red-500 text-white p-1 m-1 h-12 w-24 mt-2 rounded-md"
           >
-            Sign Out
+            Signout
           </button>
         </div>
       )}
