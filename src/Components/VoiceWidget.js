@@ -134,7 +134,7 @@ export default function VoiceWidget() {
   return (
     <>
 <main className="bg-rose-300">
-<div className="h-[86vh] flex flex-col md:flex-row justify-around items-center pt-28 lg:pt-12 md:pt-12 px-4 lg:px-0 md:px-0 space-y-4 md:space-y-0 md:space-x-4">
+<div className="h-[86vh] flex flex-col md:flex-row justify-around items-center pt-48 lg:pt-12 md:pt-12 px-4 lg:px-0 md:px-0 space-y-4 md:space-y-0 md:space-x-4">
   {/* Transcript Section */}
   <div className="flex flex-col w-full md:w-[30%] h-[400px] bg-white rounded-lg shadow-lg p-4">
     <button
@@ -286,7 +286,7 @@ export default function VoiceWidget() {
             </div>
             <div>
               <h3 className="text-xl font-bold mb-4">Follow Us</h3>
-              <ul className="space-y-2  md:pl-32 lg:pl-32 pl-60">
+              <ul className="space-y-2  md:pl-32 lg:pl-32 pl-40">
                 <li>
                   <a href="https://www.linkedin.com/company/elitenotes/" target="_blank" rel="noopener noreferrer" className="flex items-center">
                     <img src={Facebook} alt="Facebook" className="inline-block w-5 h-5 mr-2" />

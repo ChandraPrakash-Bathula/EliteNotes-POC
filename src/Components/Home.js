@@ -423,7 +423,7 @@ const Home = () => {
 
   return (
     <>
-    <div className="flex flex-col items-center pt-28 w-screen bg-rose-300">
+    <div className="flex flex-col items-center pt-48 lg:pt-28 md:pt-28 w-screen bg-rose-300">
       {/* Header */}
       {/* <header className="w-full py-4 bg-gray-800 text-white text-center">
         <h1 className="text-3xl font-bold">Elite Notes</h1>
@@ -526,7 +526,7 @@ const Home = () => {
             </div>
             <div>
               <h3 className="text-xl font-bold mb-4">Follow Us</h3>
-              <ul className="space-y-2 md:pl-32 lg:pl-32 pl-60">
+              <ul className="space-y-2 md:pl-32 lg:pl-32 pl-40">
                 <li>
                   <a
                     href="https://www.linkedin.com/company/elitenotes/"
