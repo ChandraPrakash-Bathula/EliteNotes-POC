@@ -120,7 +120,7 @@ const FileSummarizer = () => {
 
   return (
     <>
-      <div className="bg-gray-100 rounded-md p-6">
+      <div className="bg-gray-100 rounded-md py-6">
         <div className="pt-10 flex justify-center">
           <form
             className="bg-sky-800 rounded-md w-full md:w-1/2 grid grid-cols-12"
