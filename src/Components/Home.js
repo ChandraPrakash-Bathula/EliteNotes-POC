@@ -429,12 +429,12 @@ const Home = () => {
       </header> */}
 
       {/* Video Section */}
-      <div className="w-10/12 h-[535px] max-w-6xl mt-8 px-2 py-4">
+      <div className="w-10/12 h-[535px] max-w-6xl mt-8 px-4 py-4 rounded-md border-2 border-gray-800">
         <div
           className="relative pb-[56.25%]"
         >
          <iframe
-            className="absolute top-0 left-0 w-full h-[500px]"
+            className="absolute top-0 left-0 w-full h-[500px] rounded-md"
             width="450"
             height="275"
            src="https://www.youtube.com/embed/reUZRyXxUs4?si=A9TpzBKJ3GqmUigA"
@@ -626,7 +626,7 @@ const Home = () => {
 const FeatureCard = ({ feature, openDialog }) => (
   <div className="bg-white rounded-lg shadow-md p-6 text-center">
     <h3 className="text-xl font-bold mb-2">{feature.title}</h3>
-    <p className="mb-4 text-sm lg:text-lg md:text-lg text-balance">{feature.description}</p>
+    <p className="mb-4 text-sm lg:text-sm md:text-sm text-balance">{feature.description}</p>
     <button
       onClick={() => openDialog(feature)}
       className="text-blue-500 hover:underline"
