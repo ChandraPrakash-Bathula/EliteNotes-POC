@@ -286,7 +286,7 @@ export default function VoiceWidget() {
             </div>
             <div>
               <h3 className="text-xl font-bold mb-4">Follow Us</h3>
-              <ul className="space-y-2  md:pl-32 lg:pl-32 pl-60">
+              <ul className="space-y-2  md:pl-32 lg:pl-32 pl-40">
                 <li>
                   <a href="https://www.linkedin.com/company/elitenotes/" target="_blank" rel="noopener noreferrer" className="flex items-center">
                     <img src={Facebook} alt="Facebook" className="inline-block w-5 h-5 mr-2" />
