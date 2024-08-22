@@ -6,7 +6,7 @@ const Dialog = ({ isOpen, onClose, onSubmit, title, children }) => {
   return (
     <>
     <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50 p-4 md:p-6 lg:p-8">
-      <div className="bg-white rounded-lg shadow-lg w-[75%] max-w-full h-auto max-h-[80vh]">
+      <div className="bg-white rounded-lg shadow-lg w-[75%] max-w-full h-auto max-h-screen">
         <div className="flex justify-between items-center p-4 border-b">
           <h2 className="text-xl font-bold">{title}</h2>
           <button
@@ -16,7 +16,7 @@ const Dialog = ({ isOpen, onClose, onSubmit, title, children }) => {
             X
           </button>
         </div>
-        <div className="p-4 overflow-y-auto max-h-[60vh]">
+        <div className="p-4 overflow-y-auto max-h-screen">
           {children}
         </div>
         {/* Uncomment this section if you need a submit button */}

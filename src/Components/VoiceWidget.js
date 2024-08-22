@@ -212,11 +212,6 @@ export default function VoiceWidget() {
   </div>
 </section>
 
-
-
-
-
-
 <section>
       <Dialog
         isOpen={isTextSummaryOpen}
