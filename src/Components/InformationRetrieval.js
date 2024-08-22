@@ -132,10 +132,8 @@
 // };
 
 // export default InformationRetrieval;
-
 import { useRef, useState } from "react";
 import openai from "../utils/openai"; // Adjust the path as needed
-// import Header from "./Header";
 
 const InformationRetrieval = () => {
   const inputQuery = useRef(null);
@@ -144,6 +142,7 @@ const InformationRetrieval = () => {
   const [domain, setDomain] = useState("finance");
   const [domainMessage, setDomainMessage] = useState("");
   const [copyButtonText, setCopyButtonText] = useState("Copy");
+
   const handleCopy = () => {
     navigator.clipboard.writeText(results);
     setCopyButtonText("Copied!");
@@ -189,7 +188,7 @@ const InformationRetrieval = () => {
             role: "user",
             content:
               gptQuery +
-              " Don't give results for any other domains excluding banking, finance, development and supply chain. Incase of any other statement just say the query is out of domain. If there is no question is present and a domain is selected, just give a response with two relevant lines about the selected domain.option is selected in one domain and the query is from other domain, just make a response as select appropriate domain.",
+              " Give results only in the domains of banking, finance, development, and supply chain. For queries outside these domains, respond that the query is out of domain. If no query is provided and a domain is selected, provide two relevant lines about the selected domain. If development is selected, provide code if necessary.",
           },
         ],
         model: "gpt-3.5-turbo",
@@ -209,7 +208,6 @@ const InformationRetrieval = () => {
 
   return (
     <>
-      {/* <Header /> */}
       <div className="bg-gray-100 rounded-md p-6">
         <div className="pt-4 flex justify-center">
           <form
@@ -222,17 +220,11 @@ const InformationRetrieval = () => {
               className="p-4 m-4 col-span-12"
               placeholder="Enter your search query"
             />
-            <div className="col-span-12 flex justify-around">
-              <select
-                className="p-2 m-2 bg-gray-200 rounded-lg w-full text-left"
-                value={domain}
-                onChange={(e) => setDomain(e.target.value)}
-              >
-                <option value="finance">Finance</option>
-                <option value="banking">Banking</option>
-                <option value="supply_chain">Supply Chain</option>
-                <option value="development">Development</option>
-              </select>
+            <div className="col-span-12 p-4 m-2 bg-gray-200 rounded-lg w-[520px] text-left">
+              <p>
+                Supported domains: Finance, Banking, Supply Chain, Development.
+                Please make sure your query is related to one of these domains.
+              </p>
             </div>
             <button
               className="py-2 px-4 rounded-lg bg-red-600 text-white col-span-12 m-4"
