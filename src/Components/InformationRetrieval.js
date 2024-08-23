@@ -188,7 +188,7 @@ const InformationRetrieval = () => {
             role: "user",
             content:
               gptQuery +
-              " Give results only in the domains of banking, finance, development, and supply chain. For queries outside these domains, respond that the query is out of domain. If no query is provided and a domain is selected, provide two relevant lines about the selected domain. If development is selected, provide code if necessary.",
+              " Give results only in the domains of banking, finance, development, and supply chain. For queries outside these domains, respond that the query is out of domain. If no query is provided and a domain is selected, provide two relevant lines about the selected domain. If development is selected, provide code if necessary. Just give a response of text instead of any markup language or special symbols.",
           },
         ],
         model: "gpt-3.5-turbo",
