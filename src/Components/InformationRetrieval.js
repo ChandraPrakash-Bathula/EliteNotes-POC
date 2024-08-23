@@ -220,7 +220,7 @@ const InformationRetrieval = () => {
               className="p-4 m-4 col-span-12"
               placeholder="Enter your search query"
             />
-            <div className="col-span-12 p-4 m-2 bg-gray-200 rounded-lg w-[520px] text-left">
+            <div className="col-span-12 p-4 m-2 bg-gray-200 rounded-lg w-[480px] text-left">
               <p>
                 Supported domains: Finance, Banking, Supply Chain, Development.
                 Please make sure your query is related to one of these domains.
