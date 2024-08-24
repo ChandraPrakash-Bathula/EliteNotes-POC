@@ -134,7 +134,7 @@ export default function VoiceWidget() {
   return (
     <>
 <main className="bg-rose-300">
-<div className="h-[86vh] flex flex-col md:flex-row justify-around items-center pt-48 lg:pt-12 md:pt-24 px-4 lg:px-0 md:px-0 space-y-4 md:space-y-0 md:space-x-4">
+<div className="h-[86vh] flex flex-col md:flex-row justify-around items-center pt-52 lg:pt-16 md:pt-28 px-4 lg:px-0 md:px-0 space-y-4 md:space-y-0 md:space-x-4">
   {/* Transcript Section */}
   <div className="flex flex-col w-full md:w-[30%] h-[400px] bg-white rounded-lg shadow-lg p-4">
     <button
@@ -167,7 +167,7 @@ export default function VoiceWidget() {
   </div>
 
   {/* Video Meeting Section */}
-  <div className="flex flex-col w-full md:w-[40%] h-[500px] bg-black rounded-lg shadow-lg p-4">
+  <div className="flex flex-col w-full md:w-[40%] h-[450px] bg-black rounded-lg shadow-lg p-4">
     <label htmlFor="audio-record" className="block text-gray-300 font-medium mb-2">
       Record audio to transcribe
     </label>
@@ -188,7 +188,7 @@ export default function VoiceWidget() {
   </div>
 </div>
 
-<section className="relative overflow-hidden mt-8">
+<section className="relative overflow-hidden mt-2 mx-3">
   <span className="text-xl text-green-500 p-2 block">Also Try These...!!</span>
   <div className="flex flex-col md:flex-row justify-around items-center space-y-4 md:space-y-0 md:space-x-4 pb-8">
     {[
