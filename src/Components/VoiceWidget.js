@@ -167,7 +167,7 @@ export default function VoiceWidget() {
   </div>
 
   {/* Video Meeting Section */}
-  <div className="flex flex-col w-full md:w-[40%] h-[450px] bg-black rounded-lg shadow-lg p-4">
+  <div className="flex flex-col w-full md:w-[40%] h-[540px] bg-black rounded-lg shadow-lg p-4">
     <label htmlFor="audio-record" className="block text-gray-300 font-medium mb-2">
       Record audio to transcribe
     </label>
