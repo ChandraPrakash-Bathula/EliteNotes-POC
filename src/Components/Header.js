@@ -121,19 +121,19 @@ const Header = () => {
     <div className="flex flex-row md:flex-row items-center p-2 space-y-2 md:space-y-0 md:space-x-2 text-xs md:text-sm lg:text-sm font-serif">
       <button
         onClick={() => setFeedbackOpen(true)}
-        className="w-full md:w-auto md:py-2 py-1 mx-2 lg:py-2 px-4 bg-sky-600 text-white rounded-md"
+        className="w-full md:w-auto md:py-2 mt-2 lg:mt-0 md:mt-0 py-1 mx-2 lg:py-2 px-4 bg-sky-600 text-white rounded-md"
       >
         Feedback!
       </button>
       <button
-        className="w-full md:w-auto py-2 mx-2 px-4 bg-purple-500 text-white rounded-md"
+        className="w-full md:w-auto md:py-2 py-1 mx-2 lg:py-2 px-4 bg-purple-500 text-white rounded-md"
         onClick={handleFeatureSearch}
       >
         Features
       </button>
       <button
         onClick={handleSignOut}
-        className="w-full md:w-24 bg-red-500 ml-2 text-white p-1 h-12 mt-2 md:mt-0 rounded-md"
+        className="w-full md:w-auto md:py-2 py-1 mx-2 lg:py-2 px-4 bg-red-500 ml-2 text-white rounded-md"
       >
         Signout
       </button>
