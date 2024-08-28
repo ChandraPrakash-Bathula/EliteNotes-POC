@@ -144,7 +144,7 @@ const Login = () => {
         >
           {isSignInForm ? "Sign In" : "Sign Up"}
         </button>
-        <p className="py-6 cursor-pointer" onClick={toggleSignInForm}>
+        <p className="py-2 cursor-pointer" onClick={toggleSignInForm}>
           {isSignInForm
             ? "New User ? Sign Up Now"
             : "Already an User ? Sign In Now."}
