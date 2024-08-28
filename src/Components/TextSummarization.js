@@ -22,7 +22,7 @@ const TextSummarization = () => {
 
     try {
       const gptSummaryResults = await openai.chat.completions.create({
-        messages: [{ role: "user", content: gptQuery + " Don't give any summary if the input is empty. Just say there is no text to summarize in case of empty box. And only give the text summary according to the text but not any other text."}],
+        messages: [{ role: "user", content: gptQuery + "Give any summary if the input is non-empty, and try put a brief summary about the text summarization feature if you don't have any text to summarize.. Just say there is no text to summarize in case of empty box. And only give the text summary according to the text but not any other text."}],
         model: "gpt-3.5-turbo",
       });
 
