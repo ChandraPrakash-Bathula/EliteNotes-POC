@@ -504,7 +504,7 @@ const Home = () => {
                     alt="Phone"
                     className="inline-block w-5 h-5 mr-2"
                   />
-                  +91 77018 15890
+                  +1 3147230206
                 </li>
                 <li>
                   <img
@@ -512,7 +512,7 @@ const Home = () => {
                     alt="Email"
                     className="inline-block w-5 h-5 mr-2"
                   />
-                  workingonmymindset@gmail.com
+                  chandu.bathula1617@gmail.com
                 </li>
                 <li>
                   <img
@@ -520,7 +520,7 @@ const Home = () => {
                     alt="Location"
                     className="inline-block w-5 h-5 mr-2"
                   />
-                  Gurugram, Haryana 122001, INDIA
+                  Saint Louis, MO, 63108, USA
                 </li>
               </ul>
             </div>
