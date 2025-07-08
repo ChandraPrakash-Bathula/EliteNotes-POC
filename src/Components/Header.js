@@ -6,7 +6,7 @@ import { useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { toggleFeaturesView } from "../utils/featureSlice";
 import emailjs from "@emailjs/browser";
-import Logo from "../logo.avif"
+import Logo from "../logo.avif";
 
 const Header = () => {
   const navigate = useNavigate();
@@ -61,7 +61,7 @@ const Header = () => {
       //   user?.photoURL
       //     ? user.photoURL
       //     : "https://media.licdn.com/dms/image/D4D0BAQEKvnbFXsF7cA/company-logo_100_100/0/1665577857098?e=1729123200&v=beta&t=iPjhkVZVbi2-rXQJAs44VsPd2dQGOpFzwvjZ6KjRc2M"
-      // }
+      }
       alt="userIcon"
     />
     <h1 className="text-xl md:text-2xl lg:text-2xl font-serif">EliteNotes</h1>
