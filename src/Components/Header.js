@@ -55,7 +55,7 @@ const Header = () => {
     <img
       className="w-12 h-12 rounded-sm mr-4"
       onClick={handleFeatureSearch}
-      src="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=settings_accessibility"
+      src="https://ric.edu.pk/wp-content/uploads/2025/01/Artificial-Intelligence-1-770x400.jpg"
       alt="userIcon"
     />
     <h1 className="text-xl md:text-2xl lg:text-2xl font-serif">EliteNotes</h1>
