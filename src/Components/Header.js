@@ -6,7 +6,6 @@ import { useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { toggleFeaturesView } from "../utils/featureSlice";
 import emailjs from "@emailjs/browser";
-import Logo from "../logo.avif";
 
 const Header = () => {
   const navigate = useNavigate();
