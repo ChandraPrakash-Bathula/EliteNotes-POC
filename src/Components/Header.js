@@ -56,10 +56,10 @@ const Header = () => {
       className="w-12 h-12 rounded-sm mr-4"
       onClick={handleFeatureSearch}
       src={
-        Logo
+        
       //   user?.photoURL
       //     ? user.photoURL
-      //     : "https://media.licdn.com/dms/image/D4D0BAQEKvnbFXsF7cA/company-logo_100_100/0/1665577857098?e=1729123200&v=beta&t=iPjhkVZVbi2-rXQJAs44VsPd2dQGOpFzwvjZ6KjRc2M"
+        "https://media.licdn.com/dms/image/D4D0BAQEKvnbFXsF7cA/company-logo_100_100/0/1665577857098?e=1729123200&v=beta&t=iPjhkVZVbi2-rXQJAs44VsPd2dQGOpFzwvjZ6KjRc2M"
       }
       alt="userIcon"
     />
