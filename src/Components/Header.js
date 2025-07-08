@@ -55,12 +55,7 @@ const Header = () => {
     <img
       className="w-12 h-12 rounded-sm mr-4"
       onClick={handleFeatureSearch}
-      src={
-        
-      //   user?.photoURL
-      //     ? user.photoURL
-        "https://media.licdn.com/dms/image/D4D0BAQEKvnbFXsF7cA/company-logo_100_100/0/1665577857098?e=1729123200&v=beta&t=iPjhkVZVbi2-rXQJAs44VsPd2dQGOpFzwvjZ6KjRc2M"
-      }
+      src="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=settings_accessibility"
       alt="userIcon"
     />
     <h1 className="text-xl md:text-2xl lg:text-2xl font-serif">EliteNotes</h1>
